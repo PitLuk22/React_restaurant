@@ -1,7 +1,7 @@
 .cart {
     padding-top: 120px;
     padding-bottom: 50px;
-    min-height: 100vh;
+    min-height: calc(100vh - 60px);
     &__title {
         font-size: 36px;
         color: #fff;
@@ -17,24 +17,33 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-top: 40px;
+		margin-top: 40px;
+		border-radius: 8px;
         border: 1px solid rgba(256,256,256, .2);
         background-color: rgba(0,0,0,.7);
-        box-shadow: 0 0 20px rgba(256,256,256, .1);
+		box-shadow: 0 0 20px rgba(256,256,256, .1);
+		
         &-title, &-price  {
             width: 250px;
             text-align: center;
             color: #fff;
             font-size: 24px;
-        }
+		}
+		&-wrapper {
+			height: 125px;
+			width: 250px;
+			border-top-left-radius: 8px;
+			border-bottom-left-radius: 8px;
+			overflow: hidden;
+		}
         &-img {
-            height: 125px;
-            width: 250px;
-            object-fit: cover;
+			width: 250px;
+			height: 125px;
         }
-    }
+	}
     &__close {
-        position: absolute;
+		position: absolute;
+		display: block;
         width: 25px;
         height: 25px;
         text-align: center;
@@ -43,7 +52,9 @@
         color: #fff;
         font-size: 20px;
         border-radius: 100%;
-        border: 1px solid #fff;
-        cursor: pointer;
+		border: 1px solid #fff;
+		background-color:  rgba(0,0,0,.7);
+		cursor: pointer;
+		
     }
 }

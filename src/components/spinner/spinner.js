@@ -10,7 +10,7 @@ const Spinner = () => {
 		return () => clearInterval(interval)
 	})
 
-	return <div className="spinner">loading{dots}</div>
+	return <div style={{ color: 'white' }} className="spinner">loading{dots}</div>
 }
 
 export default Spinner;

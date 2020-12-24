@@ -1,35 +1,67 @@
 import React, { Component } from 'react';
 import MenuListItem from '../menu-list-item';
-import WithRestoServive from '../hoc';
+import WithRestoService from '../hoc';
+// import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
+import Spinner from '../spinner';
+import Error from '../error';
 
 import './menu-list.scss';
 
 class MenuList extends Component {
 
-	state = {
-		items: null
-	}
-
 	componentDidMount() {
-		this.getData();
-	}
+		const { RestoService, menuLoaded, menuRequested, menuError } = this.props;
 
-	getData() {
-		const { RestoService } = this.props;
+		menuRequested(); // action
 
 		RestoService.getMenuItems()
-			.then(res => this.setState({ items: res }));
+			.then(res => menuLoaded(res))
+			.catch(() => menuError())
 	}
 
+
 	render() {
+		const { menuItems, loading, error, addToCart } = this.props;
+
+		if (loading) {
+			return <Spinner />
+		}
+
+		if (error) {
+			return <Error />
+		}
+
+		const items = menuItems.map(menuItem => {
+			return <MenuListItem
+				key={menuItem.id}
+				menuItem={menuItem}
+				isLoading={loading}
+				onAddToCart={() => addToCart(menuItem.id)} />
+		})
 
 		return (
-			<ul className="menu__list">
-				<MenuListItem data={this.state.items} />
-			</ul>
+			<View items={items} />
 		)
 	}
 };
 
+const mapStateToProps = (state) => {
+	return ({
+		menuItems: state.menu,
+		loading: state.loading,
+		error: state.error
+	})
+}
 
-export default WithRestoServive(MenuList);
+const View = ({ items }) => {
+	return (
+		<ul className="menu__list">
+			{items}
+		</ul>
+	)
+}
+
+export default WithRestoService(connect(mapStateToProps, actions)(MenuList));
+

@@ -1,0 +1,20 @@
+.menu {
+	&__counter {
+		display: flex;
+		color: #000;
+		align-items: center;
+		font-size: 22px;
+		.counter {
+			padding: 0 10px;
+		}
+		.dec:hover {
+			color: orangered;
+		}
+		.inc:hover {
+			color: greenyellow;
+		}
+		.inc, .dec {
+			cursor: pointer;
+		}
+	}
+}

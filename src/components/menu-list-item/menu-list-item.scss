@@ -7,12 +7,6 @@
         border-radius: 8px;
 		padding: 20px;
 		list-style-type: none;
-		&:hover .menu__more {
-			opacity: 1;
-		}
-		&:hover .menu__img{
-			transform: scale(120%);
-		}
 	}
 	
     &__title {
@@ -27,6 +21,12 @@
 		transform: translateX(-20px);
 		height: 240px;
 		margin-bottom: 20px;
+		&:hover .menu__more {
+			opacity: 1;
+		}
+		&:hover .menu__img{
+			transform: scale(120%);
+		}
 	}
 	&__more {
 		position: absolute;
@@ -81,5 +81,10 @@
 		&:hover {
 			background-color: darken(#29a745, 15%);
 		}
-    }
+	}
+	&__tools {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
 }

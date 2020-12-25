@@ -21,11 +21,11 @@ const CartTable = (props) => {
 
 		RestoService.postData(newOrder, totalBill)
 			.then(() => {
-				clearCart();
-				setModal(!modal);
-				setResponse(true);
+				clearCart();	  // clear cart
+				setResponse(true);// define modal text
 			})
-			.catch(() => setResponse(false))
+			.catch(() => setResponse(false)) // define modal text
+			.finally(() => setModal(!modal)) // show modal
 	}
 
 	const renderModal = modal ? <Modal response={response} /> : null;

@@ -3,6 +3,7 @@ import WithRestoService from '../hoc';
 import * as actions from '../../actions';
 import { connect } from 'react-redux';
 import Spinner from '../spinner';
+import CounterBlock from '../counter-block';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -61,6 +62,10 @@ class ItemPage extends Component {
 		const item = this.props.menuItems.find(el => +el.id === +this.props.itemId)
 
 		const { info, descr, title, url, category, price, id } = item;
+		const { addToCart, deleteFromCart, cart } = this.props;
+
+		const cartItem = cart.filter(cartItem => cartItem.id === item.id);
+		const count = cartItem.length > 0 ? cartItem[0].count : null;
 
 		let color;
 		switch (info) {
@@ -77,6 +82,15 @@ class ItemPage extends Component {
 				color = 'white';
 		}
 
+		const counter = count < 1
+			? null
+			: <CounterBlock
+				id={id}
+				onAddToCart={addToCart}
+				onDeleteFromCart={deleteFromCart}
+				count={count} />
+
+
 		return (
 			<Wrapper>
 				<div className="menu__item">
@@ -88,7 +102,10 @@ class ItemPage extends Component {
 					<div className="menu__descr">{descr}</div>
 					<div className="menu__category">Category: <span>{category}</span></div>
 					<div className="menu__price">Price: <span>{price}$</span></div>
-					<button onClick={() => this.props.addToCart(id)} className="menu__btn">Add to cart</button>
+					<div className="menu__tools">
+						<button onClick={() => addToCart(id)} className="menu__btn">Add to cart</button>
+						{counter}
+					</div>
 				</div>
 			</Wrapper>
 		)
@@ -100,7 +117,8 @@ const mapStateToProps = (state) => {
 	return {
 		menuItems: state.menu,
 		loading: state.loading,
-		error: state.error
+		error: state.error,
+		cart: state.cart
 	}
 }
 

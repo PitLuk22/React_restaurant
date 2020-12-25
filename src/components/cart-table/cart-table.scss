@@ -48,10 +48,13 @@
 		box-shadow: 0 0 20px rgba(256,256,256, .1);
 		
         &-title, &-price  {
-            // width: 250px;
+            width: 250px;
             text-align: center;
             color: #fff;
             font-size: 24px;
+		}
+		&-price {
+			width: 100px;
 		}
 		&-wrapper {
 			height: 125px;

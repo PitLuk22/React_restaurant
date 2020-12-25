@@ -36,6 +36,11 @@ const deleteInstantlyFromCart = (id) => {
 		payload: id
 	}
 }
+const clearCart = (id) => {
+	return {
+		type: 'CLEAR_CART'
+	}
+}
 
 export {
 	menuLoaded,
@@ -43,5 +48,6 @@ export {
 	menuError,
 	addToCart,
 	deleteFromCart,
-	deleteInstantlyFromCart
+	deleteInstantlyFromCart,
+	clearCart
 }

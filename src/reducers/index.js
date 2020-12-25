@@ -115,6 +115,16 @@ const reducer = (state = initialState, action) => {
 				],
 				total: newTotal
 			}
+		case 'CLEAR_CART':
+			const items = [];
+			const clearedTotal = 0;
+			return {
+				...state,
+				cart: [
+					...items
+				],
+				total: clearedTotal
+			}
 		default:
 			return state;
 	}

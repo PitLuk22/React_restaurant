@@ -1,36 +1,56 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux'
 import * as actions from '../../actions';
 import WithRestoService from '../hoc';
+import Modal from '../modal';
 
 import './cart-table.scss';
 import svgCart from './empty-cart.svg';
 
 const CartTable = (props) => {
 
+	const [modal, setModal] = useState(false);
+	const [response, setResponse] = useState(null);
+
+	const sendDataCart = ({ RestoService, cart, clearCart }) => {
+		let totalBill = 0;
+		cart.forEach(item => {
+			totalBill += item.price
+		})
+		const newOrder = generateOrder(cart);
+
+		RestoService.postData(newOrder, totalBill)
+			.then(() => {
+				clearCart();
+				setModal(!modal);
+				setResponse(true);
+			})
+			.catch(() => setResponse(false))
+	}
+
+	const renderModal = modal ? <Modal response={response} /> : null;
+
 	const elementsToRender = props.cart.length < 1 ?
 		<p><img src={svgCart} alt="empty" /></p> :
 		<>
 			<View {...props} />
-			<button onClick={() => sendDataCart(props)} className='cart__checkout'>Proceed to checkout</button>
+			<button
+				onClick={() => {
+					sendDataCart(props);
+				}} className='cart__checkout'>
+				Proceed to checkout
+			</button>
 		</>
 
 	return (
 		<>
 			<div className="cart__title">Your cart:</div>
 			{elementsToRender}
+			{renderModal}
 		</>
 	);
 };
 
-const sendDataCart = ({ RestoService, cart }) => {
-	let totalBill = 0;
-	cart.forEach(item => {
-		totalBill += item.price
-	})
-	const newOrder = generateOrder(cart);
-	RestoService.postData(newOrder, totalBill)
-}
 
 const generateOrder = (items) => {
 	const newOrder = items.map(item => {

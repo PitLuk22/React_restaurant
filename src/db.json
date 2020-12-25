@@ -1,99 +1,51 @@
 {
-  "menu": [
-    {
-      "title": "Cesar salad",
-      "price": 12,
-      "url": "https://static.1000.menu/img/content/21458/-salat-cezar-s-kr-salat-cezar-s-krevetkami-s-maionezom_1501173720_1_max.jpg",
-      "category": "salads",
-      "descr": "A Caesar salad (also spelled Cesar and Cesare) is a green salad of romaine lettuce and croutons dressed with lemon juice (or lime juice), olive oil, egg, Worcestershire sauce, anchovies, garlic, Dijon mustard, Parmesan cheese, and black pepper.",
-      "info": "Salad",
-      "id": 1
-    },
-    {
-      "title": "Pizza Margherita",
-      "price": 10,
-      "url": "https://www.gastronom.ru/binfiles/images/20190605/b5a30083.jpg",
-      "category": "pizza",
-      "descr": "Pizza Margherita (more commonly known in English as Margherita pizza) is a typical Neapolitan pizza, made with San Marzano tomatoes, mozzarella cheese, fresh basil, salt and extra-virgin olive oil. ",
-      "info": "Pizza",
-      "id": 2
-    },
-    {
-      "title": "Pizza Napoletana",
-      "price": 13,
-      "url": "https://www.pizzanapoletana.org/struttura/pagine_bicolor/mobile/decalogo_avpn_1.jpg",
-      "category": "pizza",
-      "descr": "Neapolitan pizza (Italian: pizza napoletana) also known as Naples-style pizza, is a style of pizza made with tomatoes and mozzarella cheese. It must be made with either San Marzano tomatoes or Pomodorino del Piennolo del Vesuvio, which grow on the volcanic plains to the south of Mount Vesuvius, and Mozzarella di Bufala Campana, a protected designation of origin cheese made with the milk from water buffalo raised in the marshlands of Campania and Lazio in a semi-wild state, a cow milk mozzarella made exclusively in the Agerola comune.",
-      "info": "Pizza",
-      "id": 3
-    },
-    {
-      "title": "Greece salad",
-      "price": 8,
-      "url": "https://assets.epicurious.com/photos/576454fb42e4a5ed66d1df6b/master/pass/greek-salad.jpg",
-      "category": "salads",
-      "descr": "Greek salad or horiatiki salad is a popular salad in Greek cuisine generally made with pieces of tomatoes, cucumbers, onion, feta cheese (usually served as a slice on top of the other ingredients), and olives (typically Kalamata olives) and dressed with salt, pepper, Greek oregano, and olive oil. Common additions include green bell pepper slices or caper berries (especially on the Dodecanese islands). Greek salad is often imagined as a farmer's breakfast or lunch, as its ingredients resemble those that a Greek farmer might have on hand.",
-      "info": "Salad",
-      "id": 4
-    },
-    {
-      "title": "Cowboy Steak",
-      "price": 25,
-      "url": "https://i.cbc.ca/1.4491288.1516208229!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_780/cowboysteak.jpg",
-      "category": "meat",
-      "descr": "A Cowboy steak is a beef steak sliced from the rib primal of a beef animal, with rib bone attached. In the United States, the term rib eye steak is used for a rib steak with the bone removed; however, in some areas, and outside the U.S., the terms are often used interchangeably. The rib was originally, the central portion of the rib steak, without the bone, resembling an eye.",
-      "info": "Meat",
-      "id": 5
-    }
-  ],
-  "orders": [
-    {
-      "id": 1,
-      "order": [
-        {
-          "id": 2,
-          "title": "Pizza Margherita",
-          "price": 10,
-          "count": 1
-        },
-        {
-          "id": 3,
-          "title": "Pizza Napoletana",
-          "price": 39,
-          "count": 3
-        }
-      ],
-      "total": 49
-    },
-    {
-      "id": 2,
-      "order": [
-        {
-          "id": 2,
-          "title": "Pizza Margherita",
-          "price": 250,
-          "count": 25
-        }
-      ],
-      "total": 250
-    },
-    {
-      "id": 3,
-      "order": [
-        {
-          "id": 2,
-          "title": "Pizza Margherita",
-          "price": 130,
-          "count": 13
-        },
-        {
-          "id": 5,
-          "title": "Cowboy Steak",
-          "price": 600,
-          "count": 24
-        }
-      ],
-      "total": 730
-    }
-  ]
+	"menu": [{
+			"title": "Cesar salad",
+			"price": 12,
+			"url": "https://static.1000.menu/img/content/21458/-salat-cezar-s-kr-salat-cezar-s-krevetkami-s-maionezom_1501173720_1_max.jpg",
+			"category": "salads",
+			"descr": "A Caesar salad (also spelled Cesar and Cesare) is a green salad of romaine lettuce and croutons dressed with lemon juice (or lime juice), olive oil, egg, Worcestershire sauce, anchovies, garlic, Dijon mustard, Parmesan cheese, and black pepper.",
+			"info": "Salad",
+			"id": 1
+		},
+		{
+			"title": "Pizza Margherita",
+			"price": 10,
+			"url": "https://www.gastronom.ru/binfiles/images/20190605/b5a30083.jpg",
+			"category": "pizza",
+			"descr": "Pizza Margherita (more commonly known in English as Margherita pizza) is a typical Neapolitan pizza, made with San Marzano tomatoes, mozzarella cheese, fresh basil, salt and extra-virgin olive oil. ",
+			"info": "Pizza",
+			"id": 2
+		},
+		{
+			"title": "Pizza Napoletana",
+			"price": 13,
+			"url": "https://www.pizzanapoletana.org/struttura/pagine_bicolor/mobile/decalogo_avpn_1.jpg",
+			"category": "pizza",
+			"descr": "Neapolitan pizza (Italian: pizza napoletana) also known as Naples-style pizza, is a style of pizza made with tomatoes and mozzarella cheese. It must be made with either San Marzano tomatoes or Pomodorino del Piennolo del Vesuvio, which grow on the volcanic plains to the south of Mount Vesuvius, and Mozzarella di Bufala Campana, a protected designation of origin cheese made with the milk from water buffalo raised in the marshlands of Campania and Lazio in a semi-wild state, a cow milk mozzarella made exclusively in the Agerola comune.",
+			"info": "Pizza",
+			"id": 3
+		},
+		{
+			"title": "Greece salad",
+			"price": 8,
+			"url": "https://assets.epicurious.com/photos/576454fb42e4a5ed66d1df6b/master/pass/greek-salad.jpg",
+			"category": "salads",
+			"descr": "Greek salad or horiatiki salad is a popular salad in Greek cuisine generally made with pieces of tomatoes, cucumbers, onion, feta cheese (usually served as a slice on top of the other ingredients), and olives (typically Kalamata olives) and dressed with salt, pepper, Greek oregano, and olive oil. Common additions include green bell pepper slices or caper berries (especially on the Dodecanese islands). Greek salad is often imagined as a farmer's breakfast or lunch, as its ingredients resemble those that a Greek farmer might have on hand.",
+			"info": "Salad",
+			"id": 4
+		},
+		{
+			"title": "Cowboy Steak",
+			"price": 25,
+			"url": "https://i.cbc.ca/1.4491288.1516208229!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_780/cowboysteak.jpg",
+			"category": "meat",
+			"descr": "A Cowboy steak is a beef steak sliced from the rib primal of a beef animal, with rib bone attached. In the United States, the term rib eye steak is used for a rib steak with the bone removed; however, in some areas, and outside the U.S., the terms are often used interchangeably. The rib was originally, the central portion of the rib steak, without the bone, resembling an eye.",
+			"info": "Meat",
+			"id": 5
+		}
+	],
+	"orders": [
+
+	]
 }

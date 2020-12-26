@@ -1,26 +1,41 @@
 import React from 'react';
 import cartIcon from './shopping-cart-solid.svg';
-import { Link } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import './app-header.scss';
 
 const AppHeader = ({ total }) => {
+
+	const setActiveClass = (path) => {
+		return window.location.pathname.includes(path) ? 'header__link active' : 'header__link';
+	}
+
 	return (
 		<header className="header">
-			<Link className="header__link" to="/">
-				Home
-            </Link>
-			<Link className="header__link" to="/menu">
-				Menu
-            </Link>
-			<Link className="header__link" to="/cart">
-				<img className="header__cart" src={cartIcon} alt="cart"></img>
-                Total: {total} $
-            </Link>
+			<ul className='header__navbar'>
+				<div className="header__marker"></div>
+				<li>
+					<Link className={setActiveClass('home')} to="/home">
+						Home
+           			 </Link>
+				</li>
+				<li>
+					<Link className={setActiveClass('menu')} to="/menu">
+						Menu
+            		</Link>
+				</li>
+				<li>
+					<Link className={setActiveClass('cart')} to="/cart">
+						<img className="header__cart" src={cartIcon} alt="cart" />
+                		Total: {total} $
+            		</Link>
+				</li>
+			</ul>
 		</header>
 	)
 };
+
 
 const mapStateToProps = (state) => {
 	return {
@@ -28,4 +43,4 @@ const mapStateToProps = (state) => {
 	}
 }
 
-export default connect(mapStateToProps)(AppHeader);
+export default withRouter(connect(mapStateToProps)(AppHeader));

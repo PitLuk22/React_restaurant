@@ -10,14 +10,14 @@
 		justify-content: center;
 	}
 	&__window {
-		background-color: #fff;
+		background-color:#2F3640;
 		width: 400px;
 		height: 200px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		text-align: center;
-		color: #000;
+		color: #fff;
 		border-radius: 5px;
 		box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
 		transform: translateY(70%);

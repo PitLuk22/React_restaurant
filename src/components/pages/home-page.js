@@ -9,7 +9,6 @@ const Div = styled.div`
 	font-size: 3.5em;
 	color: #fff;
 	text-shadow: 5px 5px 5px #000;
-	transform: translateY(-50px);
 `;
 
 const HomePage = () => {

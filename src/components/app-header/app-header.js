@@ -16,7 +16,7 @@ const AppHeader = ({ total }) => {
 			<ul className='header__navbar'>
 				<div className="header__marker"></div>
 				<li>
-					<Link className={setActiveClass('home')} to="/home">
+					<Link className={setActiveClass('home')} to="/">
 						Home
            			 </Link>
 				</li>

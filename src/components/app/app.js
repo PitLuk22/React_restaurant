@@ -9,9 +9,9 @@ const App = () => {
 
 	return (
 		<div style={{ minHeight: '100vh', background: `url(${Background}) center center/cover no-repeat` }} className="app">
-			<AppHeader total={50} />
+			<AppHeader total={0} />
 			<Switch>
-				<Route path='/home' exact component={HomePage} />
+				<Route path='/' exact component={HomePage} />
 				<Route path='/menu' exact component={MainPage} />
 				<Route path='/cart' exact component={CartPage} />
 				<Route path='/menu/:id' render={

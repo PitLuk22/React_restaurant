@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
@@ -44,7 +44,7 @@ const useStyles = makeStyles(() => ({
 
 const AppHeader = ({ total }) => {
 	const classes = useStyles();
-	const [value, setValue] = React.useState(0);
+	const [value, setValue] = useState(0);
 
 	const handleChange = (event, newValue) => {
 		setValue(newValue);
@@ -61,7 +61,7 @@ const AppHeader = ({ total }) => {
 		<div >
 			<AppBar className={classes.root}>
 				<Tabs className={classes.flex} value={value} onChange={handleChange}>
-					<Tab label="Home" to='/home' component={Link} />
+					<Tab label="Home" to='/' component={Link} />
 					<Tab label="Menu" to='/menu' component={Link} />
 					<Tab className={classes.total} icon={<Com />} label={`Total: ${total} $`} to='/cart' component={Link} />
 				</Tabs>

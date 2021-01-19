@@ -7,30 +7,32 @@ import CounterBlock from '../counter-block';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-	width:100%;
+	width:100vw;
 	min-height: calc(100vh - 60px);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	.menu {
 		&__item {
-			width: 500px;
+			width: 35%;
+			height: 90vh;
+			transform: translateY(3rem);
 			&:hover .menu__img{
 				transform: scale(100%);
 			}
 		}
 		&__wrapper {
-			height: 250px;
+			height: 40%;
 		}
 		&__img {
-			height: 250px;
+			height: 100%;
 		}
 		&__descr {
 			text-align: left;
 			line-height: 30px;
 			margin-bottom: 20px;
 			overflow: scroll;
-			height: 160px;
+			height: 30%;
 			box-shadow: inset 0 0 10px rgba(0,0,0, .1);
 			border-radius: 5px;
 			padding: 10px 20px;
